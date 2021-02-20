@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Card displays correctly 1`] = `
+<div
+  className="sc-bdfBwQ bxNTxA"
+>
+  <button
+    className="sc-gsTCUz dCApvC"
+  >
+    <img
+      className="sc-dlfnbm OEuyo"
+    />
+    <div
+      className="sc-hKgILt jnTFzE"
+    >
+      <div
+        className="sc-eCssSg enODAG"
+      />
+      <p
+        className="sc-jSgupP fqYuEj"
+      />
+    </div>
+  </button>
+</div>
+`;
