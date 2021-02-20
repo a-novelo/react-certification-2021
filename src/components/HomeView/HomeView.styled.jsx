@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HomeViewWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: #ffffff;
   align-items: center;
   margin-top: 64px;
@@ -33,4 +33,4 @@ const HomeViewCardContainer = styled.div`
   }
 `;
 
-export { HomeViewWrapper, HomeViewTitle, HomeViewCardContainer };
+export { Wrapper, HomeViewTitle, HomeViewCardContainer };
