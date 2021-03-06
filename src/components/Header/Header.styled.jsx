@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HeaderWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: #1c5476;
   width: 100%;
   position: fixed;
@@ -29,4 +29,4 @@ const RightElements = styled.div`
   }
 `;
 
-export { HeaderWrapper, HamburgerButton, RightElements };
+export { Wrapper, HamburgerButton, RightElements };

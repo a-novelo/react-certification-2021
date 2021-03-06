@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  CardWrapper,
+  Wrapper,
   CardButton,
   CardImage,
   CardBody,
@@ -12,7 +12,7 @@ function Card(props) {
   const { photoHeader, title, description } = props;
 
   return (
-    <CardWrapper>
+    <Wrapper>
       <CardButton>
         <CardImage src={photoHeader} />
         <CardBody>
@@ -20,7 +20,7 @@ function Card(props) {
           <CardDescription>{description}</CardDescription>
         </CardBody>
       </CardButton>
-    </CardWrapper>
+    </Wrapper>
   );
 }
 
