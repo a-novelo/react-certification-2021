@@ -1,6 +1,7 @@
+import Card from './Card/Card.component';
 import Header from './Header/Header.component';
 import HomeView from './HomeView/HomeView.component';
+import RelatedVideoCard from './RelatedVideoCard/RelatedVideoCard.component';
 import SearchBar from './SearchBar/SearchBar.component';
-import Card from './Card/Card.component';
 
-export { Header, HomeView, SearchBar, Card };
+export { Card, Header, HomeView, RelatedVideoCard, SearchBar };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.button`
+const ProfileButtonWrapper = styled.button`
   background: none;
   border: none;
   color: inherit;
@@ -12,4 +12,4 @@ const Wrapper = styled.button`
   padding: 0;
 `;
 
-export { Wrapper };
+export { ProfileButtonWrapper };

@@ -14,7 +14,5 @@ describe('#DisplayToggle', () => {
     expect(screen.getByRole('switch').getAttribute('aria-checked')).toEqual('false');
     fireEvent.click(screen.getByRole('switch'));
     expect(screen.getByRole('switch').getAttribute('aria-checked')).toEqual('true');
-    // console.log('ANOVELO ', screen.getByRole('switch').getAttribute('aria-checked'));
-    // expect(container.state().error).toEqual(false);
   });
 });

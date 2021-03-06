@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Switch from 'react-switch';
-import { Wrapper } from './DisplayToggle.styled';
+import { DisplayToggleWrapper } from './DisplayToggle.styled';
 
 function DisplayToggle() {
   const [checked, setChecked] = useState(false);
@@ -10,7 +10,7 @@ function DisplayToggle() {
   }, []);
 
   return (
-    <Wrapper>
+    <DisplayToggleWrapper>
       <Switch
         onChange={toggle}
         uncheckedIcon={false}
@@ -21,7 +21,7 @@ function DisplayToggle() {
         width={48}
       />
       Dark mode
-    </Wrapper>
+    </DisplayToggleWrapper>
   );
 }
 

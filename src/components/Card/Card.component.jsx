@@ -1,6 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import {
-  Wrapper,
+  CardWrapper,
   CardButton,
   CardImage,
   CardBody,
@@ -9,18 +10,23 @@ import {
 } from './Card.styled';
 
 function Card(props) {
-  const { photoHeader, title, description } = props;
+  const history = useHistory();
+  const { photoHeader, title, description, videoId } = props;
 
   return (
-    <Wrapper>
-      <CardButton>
+    <CardWrapper>
+      <CardButton
+        onClick={() => {
+          history.push(`/video/${videoId}`);
+        }}
+      >
         <CardImage src={photoHeader} />
         <CardBody>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </CardBody>
       </CardButton>
-    </Wrapper>
+    </CardWrapper>
   );
 }
 

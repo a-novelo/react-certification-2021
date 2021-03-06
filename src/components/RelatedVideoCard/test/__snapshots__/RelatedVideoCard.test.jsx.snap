@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#RelatedVideoCard displays correctly 1`] = `
+<div
+  className="sc-bdfBwQ iMqYPQ"
+>
+  <button
+    className="sc-gsTCUz fGQDbM"
+    onClick={[Function]}
+  >
+    <img
+      className="sc-dlfnbm kCQBmk"
+    />
+    <div
+      className="sc-hKgILt jnTFzE"
+    >
+      <div
+        className="sc-eCssSg fPOxlr"
+      />
+    </div>
+  </button>
+</div>
+`;

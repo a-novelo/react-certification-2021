@@ -5,7 +5,8 @@ exports[`#Card displays correctly 1`] = `
   className="sc-bdfBwQ fWeIMK"
 >
   <button
-    className="sc-gsTCUz dCApvC"
+    className="sc-gsTCUz iSKmng"
+    onClick={[Function]}
   >
     <img
       className="sc-dlfnbm OEuyo"

@@ -1,41 +1,25 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { useAuth } from '../../providers/Auth';
 import { Header, HomeView } from '../../components';
 import './Home.styles.css';
 
 function HomePage() {
-  const history = useHistory();
+  const location = useLocation();
   const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
+  const [searchTerm, setSearchTerm] = useState('wizeline');
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  useEffect(() => {
+    if (location && location.state && location.state.search) {
+      console.log('ANOVELO - setting this');
+      setSearchTerm(location.state.search);
+    }
+  }, [location]);
 
   return (
     <section className="homepage" ref={sectionRef}>
-      <Header />
-      {authenticated ? (
-        <>
-          <HomeView>
-            <Link to="/" onClick={deAuthenticate}>
-              logout
-            </Link>
-          </HomeView>
-        </>
-      ) : (
-        <>
-          <HomeView>
-            <Link to="/" onClick={deAuthenticate}>
-              logout
-            </Link>
-          </HomeView>
-        </>
-      )}
+      <Header search={setSearchTerm} />
+      <HomeView search={searchTerm} />
     </section>
   );
 }
