@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const SearchBarWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.15);
   display: flex;
   min-height: 35px;
@@ -28,4 +28,4 @@ const SearchBarInput = styled.input`
   }
 `;
 
-export { Wrapper, SearchBarIcon, SearchBarInput };
+export { SearchBarWrapper, SearchBarIcon, SearchBarInput };

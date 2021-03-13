@@ -1,23 +1,25 @@
 import React from 'react';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Wrapper, HamburgerButton, RightElements } from './Header.styled';
+import { HeaderWrapper, HamburgerButton, RightElements } from './Header.styled';
 import SearchBar from '../SearchBar/SearchBar.component';
 import ProfileButton from '../ProfileButton/ProfileButton.component';
 import DisplayToggle from '../DisplayToggle/DisplayToggle.component';
 
-function Header() {
+function Header(props) {
+  const { search } = props;
+
   return (
-    <Wrapper>
+    <HeaderWrapper>
       <HamburgerButton type="submit">
         <FontAwesomeIcon icon={faBars} size="lg" />
       </HamburgerButton>
-      <SearchBar />
+      <SearchBar search={search} />
       <RightElements>
         <DisplayToggle />
         <ProfileButton />
       </RightElements>
-    </Wrapper>
+    </HeaderWrapper>
   );
 }
 

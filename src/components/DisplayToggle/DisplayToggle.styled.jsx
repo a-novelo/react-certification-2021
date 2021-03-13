@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.button`
+const DisplayToggleWrapper = styled.button`
   background-color: inherit;
   background: none;
   border: none;
@@ -14,4 +14,4 @@ const Wrapper = styled.button`
   align-items: center;
 `;
 
-export { Wrapper };
+export { DisplayToggleWrapper };

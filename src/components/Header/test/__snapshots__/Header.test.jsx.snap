@@ -52,6 +52,7 @@ exports[`#Header displays correctly 1`] = `
     </div>
     <input
       className="sc-jSgupP ioHnLh"
+      onKeyDown={[Function]}
       placeholder="Search..."
     />
   </div>

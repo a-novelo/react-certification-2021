@@ -1,13 +1,13 @@
 import React from 'react';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Wrapper } from './ProfileButton.styled';
+import { ProfileButtonWrapper } from './ProfileButton.styled';
 
 function ProfileButton() {
   return (
-    <Wrapper>
+    <ProfileButtonWrapper>
       <FontAwesomeIcon icon={faUserCircle} size="2x" />
-    </Wrapper>
+    </ProfileButtonWrapper>
   );
 }
 
