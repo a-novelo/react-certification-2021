@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const HomeViewWrapper = styled.div`
-  background-color: #ffffff;
   align-items: center;
+  background-color: ${(props) => (props.theme === 'light' ? '#ffffff' : '#303030')};
+  color: ${(props) => (props.theme === 'light' ? '#000000' : '#ffffff')};
   margin-top: 64px;
 `;
 

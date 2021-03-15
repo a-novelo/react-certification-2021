@@ -1,15 +1,20 @@
 import React from 'react';
 import { HomeViewWrapper, HomeViewTitle, HomeViewCardContainer } from './HomeView.styled';
 import Card from '../Card/Card.component';
+import { useSearch } from '../../providers/Search';
+import { useTheme } from '../../providers/Theme';
 // import videos from '../../resources/youtube-videos-mock.json';
 import useVideosSearch from '../../utils/hooks/useVideosSearch';
 
-function HomeView(props) {
-  const { search } = props;
+function HomeView() {
+  const { getSearch } = useSearch();
+  const { getTheme } = useTheme();
+  const search = getSearch();
+  const theme = getTheme();
   const videos = useVideosSearch(search);
 
   return (
-    <HomeViewWrapper>
+    <HomeViewWrapper theme={theme}>
       <HomeViewTitle>Welcome to the Challenge!</HomeViewTitle>
       <HomeViewCardContainer>
         {videos.map((video) => (
