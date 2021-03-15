@@ -8,7 +8,7 @@ exports[`#App displays correctly 1`] = `
     className="homepage"
   >
     <div
-      className="sc-gKsewC cjQjws"
+      className="sc-gKsewC iWZxLL"
     >
       <button
         className="sc-iBPRYJ jafISj"
@@ -186,7 +186,7 @@ exports[`#App displays correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-dQppl kUlMZi"
+      className="sc-dQppl bOVxrr"
     >
       <h2
         className="sc-bqyKva cWwoHR"

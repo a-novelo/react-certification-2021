@@ -2,7 +2,7 @@
 
 exports[`#Card displays correctly 1`] = `
 <div
-  className="sc-bdfBwQ fWeIMK"
+  className="sc-bdfBwQ fPgORt"
 >
   <button
     className="sc-gsTCUz iSKmng"
@@ -18,7 +18,7 @@ exports[`#Card displays correctly 1`] = `
         className="sc-eCssSg enODAG"
       />
       <p
-        className="sc-jSgupP fqYuEj"
+        className="sc-jSgupP jNMAjU"
       />
     </div>
   </button>
