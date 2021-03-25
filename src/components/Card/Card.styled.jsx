@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const CardWrapper = styled.div`
+  background-color: ${(props) => (props.theme === 'light' ? 'inherit' : '#424242')};
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
     0px 1px 3px 0px rgb(0 0 0 / 12%);
@@ -45,7 +46,8 @@ const CardDescription = styled.p`
   font-weight: 400;
   line-height: 1.43;
   letter-spacing: 0.01071em;
-  color: rgba(0, 0, 0, 0.54);
+  color: ${(props) =>
+    props.theme === 'light' ? 'rgba(0, 0, 0, 0.54)' : 'rgba(255, 255, 255, 0.7)'};
 `;
 
 export { CardWrapper, CardButton, CardImage, CardBody, CardTitle, CardDescription };

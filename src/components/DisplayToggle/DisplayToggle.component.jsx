@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Switch from 'react-switch';
 import { DisplayToggleWrapper } from './DisplayToggle.styled';
+import { useTheme } from '../../providers/Theme';
 
 function DisplayToggle() {
+  const { setTheme } = useTheme();
   const [checked, setChecked] = useState(false);
 
   const toggle = React.useCallback(() => {
     setChecked((v) => !v);
   }, []);
+
+  useEffect(() => {
+    if (checked) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }, [checked, setTheme]);
 
   return (
     <DisplayToggleWrapper>

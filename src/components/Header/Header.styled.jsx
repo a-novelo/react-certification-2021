@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
-  background-color: #1c5476;
+  background-color: ${(props) => (props.theme === 'light' ? '#1c5476' : '#556cd6;')};
   width: 100%;
   position: fixed;
   color: #ffffff;

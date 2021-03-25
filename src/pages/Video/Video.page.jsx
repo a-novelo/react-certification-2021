@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import {
   VideoCard,
@@ -10,6 +10,7 @@ import {
   RelatedVideosContainer,
 } from './Video.styled';
 import { Header, RelatedVideoCard } from '../../components';
+import { useSearch } from '../../providers/Search';
 import useVideo from '../../utils/hooks/useVideo';
 import useRelatedVideoList from '../../utils/hooks/useRelatedVideoList';
 // import videos from '../../resources/youtube-videos-mock.json';
@@ -17,7 +18,8 @@ import useRelatedVideoList from '../../utils/hooks/useRelatedVideoList';
 function Video() {
   const sectionRef = useRef(null);
   const { videoId } = useParams();
-  const [searchTerm, setSearchTerm] = useState('');
+  const { getSearch } = useSearch();
+  const searchTerm = getSearch();
   const history = useHistory();
   const video = useVideo(videoId);
   const relatedVideos = useRelatedVideoList(videoId);
@@ -28,7 +30,7 @@ function Video() {
 
   return (
     <section className="video" ref={sectionRef}>
-      <Header search={setSearchTerm} />
+      <Header />
       {video[0] && (
         <BodyWrapper>
           <VideoContainer>

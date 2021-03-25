@@ -1,14 +1,15 @@
 import React from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSearch } from '../../providers/Search';
 import { SearchBarWrapper, SearchBarIcon, SearchBarInput } from './SearchBar.styled';
 
-function SearchBar(props) {
-  const { search } = props;
+function SearchBar() {
+  const { setSearch } = useSearch();
 
   const inputSearch = (e) => {
     if (e.key === 'Enter') {
-      search(e.target.value);
+      setSearch(e.target.value);
     }
   };
 
