@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#SideMenu displays correctly 1`] = `
+<div
+  className="sc-bdfBwQ hQCyxS"
+>
+  <div
+    className="sc-gsTCUz faHrza"
+    onClick={[Function]}
+  >
+    Home
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import {
   VideoCard,
@@ -7,12 +7,15 @@ import {
   VideoBody,
   VideoTitle,
   VideoDescription,
+  VideoFavoritesButton,
   RelatedVideosContainer,
 } from './Video.styled';
 import { Header, RelatedVideoCard } from '../../components';
 import { useSearch } from '../../providers/Search';
-import useVideo from '../../utils/hooks/useVideo';
+import useVideos from '../../utils/hooks/useVideos';
 import useRelatedVideoList from '../../utils/hooks/useRelatedVideoList';
+import { FAVORITES_ARRAY } from '../../utils/constants';
+import { storage } from '../../utils/storage';
 // import videos from '../../resources/youtube-videos-mock.json';
 
 function Video() {
@@ -21,12 +24,30 @@ function Video() {
   const { getSearch } = useSearch();
   const searchTerm = getSearch();
   const history = useHistory();
-  const video = useVideo(videoId);
+  const video = useVideos(videoId);
   const relatedVideos = useRelatedVideoList(videoId);
+
+  const favoritesList = storage.get(FAVORITES_ARRAY) ? storage.get(FAVORITES_ARRAY) : [];
+  const [isFavorite, setIsFavorite] = useState(favoritesList.indexOf(videoId) !== -1);
 
   if (searchTerm !== '') {
     history.push({ pathname: '/', state: { search: searchTerm } });
   }
+
+  const addFavorites = () => {
+    favoritesList.push(videoId);
+    storage.set(FAVORITES_ARRAY, favoritesList);
+    setIsFavorite(true);
+  };
+
+  const removeFavorites = () => {
+    const indexFavorite = favoritesList.indexOf(videoId);
+    if (indexFavorite >= 0) {
+      favoritesList.splice(indexFavorite, 1);
+    }
+    storage.set(FAVORITES_ARRAY, favoritesList);
+    setIsFavorite(false);
+  };
 
   return (
     <section className="video" ref={sectionRef}>
@@ -38,6 +59,15 @@ function Video() {
             <VideoBody>
               <VideoTitle>{video[0].snippet.title}</VideoTitle>
               <VideoDescription>{video[0].snippet.description}</VideoDescription>
+              {isFavorite ? (
+                <VideoFavoritesButton onClick={removeFavorites}>
+                  Eliminar de favoritos
+                </VideoFavoritesButton>
+              ) : (
+                <VideoFavoritesButton onClick={addFavorites}>
+                  Agregar a favoritos
+                </VideoFavoritesButton>
+              )}
             </VideoBody>
           </VideoContainer>
           <RelatedVideosContainer>

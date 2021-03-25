@@ -25,6 +25,13 @@ const VideoDescription = styled.div`
   white-space: nowrap;
 `;
 
+const VideoFavoritesButton = styled.button`
+  background-color: inherit;
+  border-radius: 4px;
+  min-width: 64px;
+  text-transform: uppercase;
+`;
+
 const RelatedVideosContainer = styled.div`
   background-color: white;
   height: 100%;
@@ -42,5 +49,6 @@ export {
   VideoBody,
   VideoTitle,
   VideoDescription,
+  VideoFavoritesButton,
   RelatedVideosContainer,
 };
