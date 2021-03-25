@@ -6,6 +6,7 @@ import './NotFound.styles.css';
 function NotFoundPage() {
   return (
     <section className="not-found">
+      404 - Page not Found
       <Link to="/" className="home-link">
         home
       </Link>

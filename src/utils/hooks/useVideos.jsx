@@ -10,14 +10,14 @@ const fetchVideo = async (videoId) => {
   const { items: video, error: { errMsg } = {} } = await request.json();
 
   if (errMsg) {
-    console.error('Error in useVideo: ', errMsg);
+    console.error('Error in useVideos: ', errMsg);
     return [];
   }
 
   return video || [];
 };
 
-const useVideo = (videoId = '') => {
+const useVideos = (videoId = '') => {
   const [video, setVideo] = useState([]);
   useEffect(() => {
     fetchVideo(videoId).then((videoList) => {
@@ -27,4 +27,4 @@ const useVideo = (videoId = '') => {
   return video;
 };
 
-export default useVideo;
+export default useVideos;

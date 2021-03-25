@@ -5,6 +5,13 @@ import { storage } from '../../utils/storage';
 
 const AuthContext = React.createContext(null);
 
+const mockedUser = {
+  id: '123',
+  name: 'Wizeline',
+  avatarUrl:
+    'https://media.glassdoor.com/sqll/868055/wizeline-squarelogo-1473976610815.png',
+};
+
 function useAuth() {
   const context = useContext(AuthContext);
   if (!context) {
@@ -23,9 +30,12 @@ function AuthProvider({ children }) {
     setAuthenticated(isAuthenticated);
   }, []);
 
-  const login = useCallback(() => {
-    setAuthenticated(true);
-    storage.set(AUTH_STORAGE_KEY, true);
+  const login = useCallback((username, password) => {
+    if (username === 'wizeline' && password === 'Rocks!') {
+      setAuthenticated(true);
+      storage.set(AUTH_STORAGE_KEY, true);
+      return mockedUser;
+    }
   }, []);
 
   const logout = useCallback(() => {
@@ -33,8 +43,14 @@ function AuthProvider({ children }) {
     storage.set(AUTH_STORAGE_KEY, false);
   }, []);
 
+  const getUser = () => {
+    if (authenticated) {
+      return mockedUser;
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ login, logout, authenticated }}>
+    <AuthContext.Provider value={{ login, logout, getUser, authenticated }}>
       {children}
     </AuthContext.Provider>
   );

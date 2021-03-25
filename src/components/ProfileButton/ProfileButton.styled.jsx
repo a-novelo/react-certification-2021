@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const ProfileButtonWrapper = styled.button`
+const ProfileButtonWrapper = styled.div``;
+
+const ProfileButtonContainer = styled.button`
   background: none;
   border: none;
   color: inherit;
@@ -12,4 +14,11 @@ const ProfileButtonWrapper = styled.button`
   padding: 0;
 `;
 
-export { ProfileButtonWrapper };
+const UserAvatar = styled.img`
+  border-radius: 20px;
+  height: 35px;
+  object-fit: cover;
+  width: 35px;
+`;
+
+export { ProfileButtonWrapper, ProfileButtonContainer, UserAvatar };

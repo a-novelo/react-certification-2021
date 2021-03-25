@@ -1,30 +1,38 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react';
-import ProfileButton from '../ProfileButton.component';
+import SideMenu from '../SideMenu.component';
 import AuthProvider from '../../../providers/Auth';
 
-describe('#ProfileButton', () => {
+const mockHistoryPush = jest.fn();
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
+
+describe('#SideMenu', () => {
   it('displays correctly', () => {
     const tree = renderer
       .create(
         <AuthProvider>
-          <ProfileButton />
+          <SideMenu />
         </AuthProvider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('closes modal', () => {
+  it('goes to the home page', () => {
     render(
       <AuthProvider>
-        <ProfileButton />
+        <SideMenu handleClose={() => {}} />
       </AuthProvider>
     );
-    const profileButton = screen.getByTestId('profile-icon');
+    const homeButton = screen.getByText('Home');
     fireEvent(
-      profileButton,
+      homeButton,
       new MouseEvent('click', {
         bubbles: true,
         cancelable: true,
